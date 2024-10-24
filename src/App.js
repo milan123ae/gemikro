@@ -1,24 +1,23 @@
 import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import ActivePartners from './ActivePartners';
+import NotConcluded from './NotConcluded';
+import UnpaidYear from './UnpaidYear';
+import TotalPaidInvoices from './TotalPaidInvoices';
+import DebtRepayment from './DebtRepayment';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/active-partners" element={<ActivePartners/>} />
+        <Route path="/non-concluded" element={<NotConcluded/>} />
+        <Route path="/unpaid-year" element={<UnpaidYear/>} />
+        <Route path="/total-paid-invoices" element={<TotalPaidInvoices/>} />
+        <Route path="/debt-payment" element={<DebtRepayment/>} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
